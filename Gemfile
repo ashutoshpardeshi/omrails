@@ -1,7 +1,9 @@
 source 'https://rubygems.org'
 
 gem 'rails', '3.2.11'
-
+gem 'devise'
+gem 'jquery-rails'
+gem 'simple_form'
 group :production do
   gem 'pg'
 end
@@ -17,4 +19,4 @@ group :assets do
   gem 'bootstrap-sass', '~> 2.2.2.0'
 end
 
-gem 'jquery-rails'
+
