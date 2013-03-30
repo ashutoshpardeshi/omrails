@@ -1,0 +1,20 @@
+<h1>News you posted</h1>
+
+<table class="table table-striped">
+  <thead>
+      <tr>
+        <th>Description</th>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+  </thead>
+  <tbody>
+    <%= render @news %>
+
+  </tbody>
+</table>
+
+<br />
+
+<%= link_to 'New News', new_news_path %>

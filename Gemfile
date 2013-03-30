@@ -4,8 +4,9 @@ gem 'rails', '3.2.11'
 gem 'devise'
 gem 'jquery-rails'
 gem 'simple_form'
+gem 'mysql2'
 group :production do
-  gem 'pg'
+  #gem 'pg'
 end
 
 group :development,  :test do
