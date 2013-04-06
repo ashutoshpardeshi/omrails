@@ -1,4 +1,7 @@
 class NewsController < ApplicationController
+ before_filter :authenticate_user!, except: [:index]
+
+
   # GET /news
   # GET /news.json
   def index
@@ -24,7 +27,8 @@ class NewsController < ApplicationController
   # GET /news/new
   # GET /news/new.json
   def new
-    @news = News.new
+    @news = current_user.news.new
+
 
     respond_to do |format|
       format.html # new.html.erb
@@ -34,13 +38,13 @@ class NewsController < ApplicationController
 
   # GET /news/1/edit
   def edit
-    @news = News.find(params[:id])
+    @news = current_user.news.find(params[:id])
   end
 
   # POST /news
   # POST /news.json
   def create
-    @news = News.new(params[:news])
+    @news = current_user.news.new(params[:news])
 
     respond_to do |format|
       if @news.save
@@ -56,7 +60,7 @@ class NewsController < ApplicationController
   # PUT /news/1
   # PUT /news/1.json
   def update
-    @news = News.find(params[:id])
+    @news = current_user.news.find(params[:id])
 
     respond_to do |format|
       if @news.update_attributes(params[:news])
@@ -72,7 +76,7 @@ class NewsController < ApplicationController
   # DELETE /news/1
   # DELETE /news/1.json
   def destroy
-    @news = News.find(params[:id])
+    @news = current_user.news.find(params[:id])
     @news.destroy
 
     respond_to do |format|
