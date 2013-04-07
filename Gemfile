@@ -5,12 +5,17 @@ gem 'devise'
 gem 'jquery-rails'
 gem 'simple_form'
 gem 'mysql2'
+#gem 'pg'
+
+#gem 'activerecord-postgresql-adapter'
 group :production do
+  gem 'mysql2'
   #gem 'pg'
 end
 
 group :development,  :test do
-  gem 'sqlite3'
+  #gem 'pg', '~> 0.15.0'
+  gem 'mysql2'
 end
 
 group :assets do
