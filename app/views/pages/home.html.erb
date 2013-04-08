@@ -1,9 +1,39 @@
 <%if user_signed_in?%>
- <h1>You are logged in </h1>
+
+
+    <table class="table table-hover">
+      <thead>
+      <tr>
+        <th>Description</th>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+      </thead>
+      <tbody>
+      <%= render @news %>
+
+      </tbody>
+    </table>
+
 <% else %>
-<h1>New site, new deals</h1>
+
 <div class="center hero-unit">
-    <h1>Welcome! </h1>
+
+  <table class="table">
+    <thead>
+    <tr>
+
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    <%= render @news %>
+
+    </tbody>
+  </table>
 
 </div>
 <% end %>
